@@ -1,0 +1,11 @@
+.img-people>img {
+    width: 30px;
+    border-radius: 50%;
+}
+.row-1>div {
+    background: #cccccc;
+}
+.img-people1 {
+    width: 400px;
+    height: 200px;
+}
