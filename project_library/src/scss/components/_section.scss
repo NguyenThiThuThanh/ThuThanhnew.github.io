@@ -1,0 +1,68 @@
+/* ==========================================================================
+   #Section
+   ========================================================================== */
+
+.page-section {
+    padding: 8rem 0;
+    &#about {
+        background-color: #f4623a;
+        hr.divider {
+            border-color: #ffffff;
+        }
+        p {
+            color: rgba(255, 255, 255, 0.5);
+        }
+    }
+    &#services {
+        hr.divider {
+            border-color: #f4623a;
+        }
+    }
+    &#contact {
+        hr.divider {
+            border-color: #f4623a;
+        }
+    }
+    
+    h2 {
+        font-size: 2rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 500;
+    }
+    a {
+        display: inline-block;
+        color: #212529;
+        background-color: #f8f9fa;
+    }
+}
+
+#portfolio {
+    img {
+        max-width: 100%;
+        vertical-align: middle;
+        border-style: none;
+    }
+    .portfolio-box {
+        position: relative;
+        display: block;
+        >.portfolio-box-caption {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+            opacity: 0;
+            color: #fff;
+            background: rgba(244, 98, 58, 0.9);
+            transition: opacity 0.25s ease;
+            text-align: center;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}

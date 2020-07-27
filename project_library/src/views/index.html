@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+<body>
+    @@include('components/navbar.html')
+    @@include('common/header.html')
+    <section class="page-section" id="about">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="text-white mt-0">We've got what you need!</h2>
+                    <hr class="divider my-4">
+                    <p class="mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
+                    <a class="btn-xl" href="#services">Get Started!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end-section -->
+
+    @@include('components/services.html', {
+        "title" : "At Your Service",
+        "item": {
+            "name": ['Sturdy Themes', 'Up to Date', 'Ready to Publish', 'Made with Love'],
+            "text": ['Our themes are updated regularly to keep them bug free!', 'All dependencies are kept current to keep things fresh.', 'You can use this design as is, or you can make changes!', 'Is it really open source if it is not made with love?'],
+        }
+    })
+    <!-- end-section -->
+
+    @@include('components/portfolio.html', {
+        "img": [
+            'https://startbootstrap.github.io/startbootstrap-creative/assets/img/portfolio/fullsize/1.jpg',
+            'https://startbootstrap.github.io/startbootstrap-creative/assets/img/portfolio/fullsize/2.jpg',
+            'https://startbootstrap.github.io/startbootstrap-creative/assets/img/portfolio/fullsize/3.jpg',
+            'https://startbootstrap.github.io/startbootstrap-creative/assets/img/portfolio/fullsize/4.jpg',
+            'https://startbootstrap.github.io/startbootstrap-creative/assets/img/portfolio/fullsize/5.jpg',
+            'https://startbootstrap.github.io/startbootstrap-creative/assets/img/portfolio/fullsize/6.jpg'
+        ],
+        "category": [
+            'Category1',
+            'Category2',
+            'Category3',
+            'Category4',
+            'Category5',
+            'Category6'
+        ],
+        "name": [
+            'Project Name1',
+            'Project Name2',
+            'Project Name3',
+            'Project Name4',
+            'Project Name5',
+            'Project Name6'
+        ]
+    })
+    <!-- end-section -->
+
+    <div class="page-section bg-dark text-white section-download">
+        <div class="container text-center">
+            <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
+            <a class="btn-xl" href="#">Download Now!</a>
+        </div>
+    </div>
+    <!-- end-section -->
+
+    <!-- lightbox -->
+    <div class="light-box">
+        <img src="" alt="" class="light-img">
+    </div>
+    <!-- end-lightbox -->
+
+    <section class="page-section" id="contact">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mt-0">Let's Get In Touch!</h2>
+                    <hr class="divider my-4">
+                    <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
+                    <div>+1 (555) 123-4567</div>
+                </div>
+                <div class="col-lg-4 mr-auto text-center">
+                    <a class="d-block" href="#">contact@yourwebsite.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end-section -->
+    @@include('common/footer.html')
+
+    <script type="text/javascript" src="libs/jquery/jquery-3.3.1.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+/* ==========================================================================
+   #Wrapper
+   ========================================================================== */
+
+.content-container {
+    width: 100%;
+    padding: 0 calc-rem($space_base);
+    margin: 0 auto;
+}
+.container {
+    @extend .content-container;
+    @each $key, $val in $container_breakpoints {
+        @include bp($key) {
+            max-width: calc-rem($val);
+        }
+    }
+    &__fluid {
+        @extend .content-container;
+        width: 100%;
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 calc-rem(-$space_base);
+}
+
+.col {
+    @extend .content-container;
+    flex-basis: 0;
+    flex-grow: 1;
+    min-width: 0;
+    max-width: 100%;
+}

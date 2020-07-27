@@ -1,0 +1,57 @@
+/* ==========================================================================
+   #Spacing
+   ========================================================================== */
+
+@each $key, $val in $spacers {
+    .m {
+        &t-#{$key} {
+            margin-top: $val !important;
+        }
+        &r-#{$key} {
+            margin-right: $val !important;
+        }
+        &l-#{$key} {
+            margin-left: $val !important;
+        }
+        &b-#{$key} {
+            margin-bottom: $val !important;
+        }
+        &-#{$key} {
+            margin: $val !important;
+        }
+        &x-#{$key} {
+            margin: auto $val !important;
+        }
+        &y-#{$key} {
+            margin: $val auto !important;
+        }
+    }
+    .p {
+        &t-#{$key} {
+            padding-top: $val !important;
+        }
+        &r-#{$key} {
+            padding-right: $val !important;
+        }
+        &l-#{$key} {
+            padding-left: $val !important;
+        }
+        &b-#{$key} {
+            padding-bottom: $val !important;
+        }
+        &-#{$key} {
+            padding: $val !important;
+        }
+        &x-#{$key} {
+            padding-left: $val !important;
+            padding-right: $val !important;
+        }
+        &y-#{$key} {
+            padding-top: $val !important;
+            padding-bottom: $val !important;
+        }
+    }
+}
+.h-100 {
+    height: 100vh;
+}

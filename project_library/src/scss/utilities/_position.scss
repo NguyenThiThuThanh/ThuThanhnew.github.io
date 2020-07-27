@@ -1,0 +1,28 @@
+/* ==========================================================================
+   #Position
+   ========================================================================== */
+
+$positions: static relative absolute fixed sticky;
+.position {
+    @each $position in $positions {
+        &-#{$position} {
+            position: #{$position};
+        }
+    }
+}
+.fixed {
+    &-top {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+    &-bottom {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+}

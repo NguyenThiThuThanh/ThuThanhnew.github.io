@@ -1,0 +1,33 @@
+{
+  "name": "project_library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gulp",
+    "test": "stylelint src/scss/**/*.scss --fix && stylelint src/css/*.css --fix",
+    "build": "npm run test && gulp build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^4.14.1"
+  },
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "del": "^5.1.0",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-cache": "^1.1.3",
+    "gulp-cli": "^2.3.0",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-uglify-es": "^2.0.0",
+    "gulp-useref": "^4.0.1",
+    "gulp.spritesmith": "^6.11.0",
+    "run-sequence": "^2.2.1"
+  }
+}

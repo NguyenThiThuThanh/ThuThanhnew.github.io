@@ -1,0 +1,39 @@
+/* ==========================================================================
+   #Header
+   ========================================================================== */
+
+header.masthead {
+    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url(https://startbootstrap.github.io/startbootstrap-creative/assets/img/bg-masthead.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    h1 {
+        font-size: 2.25rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    hr.divider {
+        border-color: #f4623a;
+    }
+    p {
+        color: rgba(255, 255, 255, 0.75);
+        font-weight: 300;
+    }
+    .link-about {
+        background-color: #f4623a;
+    }
+    @include bp('md') {
+        height: 100vh;
+        min-height: 40rem;
+        padding-top: 4.5rem;
+        padding-bottom: 0;
+        h1 {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+    }
+}

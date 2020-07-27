@@ -1,0 +1,27 @@
+/* ==========================================================================
+   #Text
+   ========================================================================== */
+/* prettier-ignore */
+.text {
+    &-hidden {
+        font: 0/0 serif;
+        color: transparent;
+        text-shadow: none;
+    }
+
+    &-center {
+        text-align: center;
+    }
+}
+
+.list {
+    &-unstyled {
+        list-style: none;
+        margin: 0;
+    }
+}
+.nav-link {
+    &.active {
+        color: #f4623a !important;
+    }
+}

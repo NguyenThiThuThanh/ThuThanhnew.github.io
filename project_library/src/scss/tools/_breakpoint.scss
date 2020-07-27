@@ -1,0 +1,188 @@
+/* ==========================================================================
+   #Breakpoint
+   ========================================================================== */
+@charset "utf-8";
+
+@mixin bp($bp) {
+    @if $bp =='xs'{
+        @media (min-width: map-get($container_breakpoints, "xs")) {
+            @content;
+        }
+    }
+    @else if $bp =='sm'{
+        @media (min-width: map-get($container_breakpoints, "sm")) {
+            @content;
+        }
+    }
+    @else if $bp =='md'{
+        @media (min-width: map-get($container_breakpoints, "md")) {
+            @content;
+        }
+    }
+    @else if $bp =='lg'{
+        @media (min-width: map-get($container_breakpoints, "lg")) {
+            @content;
+        }
+    }
+    @else if $bp =='xl' {
+        @media (min-width: map-get($container_breakpoints, "xl")) {
+            @content;
+        }
+    }
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+
+$aligns: center flex-start flex-end baseline stretch;
+$displays: block flex fixed none inline-block inline-flex;
+$directions: row row-reverse column column-reverse;
+$justifys: start end center space-between space-around;
+$wraps: wrap nowrap wrap-reverse;
+
+@mixin column($nameCol) {
+    @for $i from 1 through 12 {
+        $width: percentage($i / 12);
+        .col-#{$nameCol}-#{$i} {
+            width: $width !important;
+            position: relative;
+            padding: 0 $space_base;
+        }
+        .col-#{$i} {
+            width: $width;
+        }
+        .order-#{$nameCol}-#{$i} {
+            order: $i !important;
+        }
+        .order-#{$i} {
+            order: $i;
+        }
+    }
+    .align {
+        @each $align in $aligns {
+            &-items-#{$nameCol}-#{$align} {
+                align-items: #{$align} !important;
+            }
+            &-items-#{$align} {
+                align-items: #{$align};
+            }
+            &-self-#{$nameCol}-#{$align} {
+                align-self: #{$align} !important;
+            }
+            &-self-#{$align} {
+                align-self: #{$align};
+            }
+        }
+    }
+    .justify {
+        @each $justify in $justifys {
+            &-content-#{$nameCol}-#{$justify} {
+                justify-content: #{$justify} !important;
+            }
+            &-content-#{$justify} {
+                justify-content: #{$justify};
+            }
+        }
+    }
+    .d {
+        @each $display in $displays {
+            &-#{$nameCol}-#{$display} {
+                display: #{$display} !important;
+            }
+            &-#{$display} {
+                display: #{$display};
+            }
+        }
+    }
+    .flex {
+        @each $direction in $directions {
+            &-#{$nameCol}-#{$direction} {
+                flex-direction: #{$direction} !important;
+            }
+            &-#{$direction} {
+                flex-direction: #{$direction};
+            }
+        }
+        @each $wrap in $wraps {
+            &-#{$nameCol}-#{$wraps} {
+                flex-wrap: #{$wraps} !important;
+            }
+            &-#{$wraps} {
+                flex-wrap: #{$wraps};
+            }
+        }
+    }
+    .m {
+        &l {
+            &-#{$nameCol}-auto {
+                margin-left: auto !important;
+            }
+            &-auto {
+                margin-left: auto;
+            }
+        }
+        &r {
+            &-#{$nameCol}-auto {
+                margin-right: auto !important;
+            }
+            &-auto {
+                margin-right: auto;
+            }
+        }
+        &t {
+            &-#{$nameCol}-auto {
+                margin-top: auto !important;
+            }
+            &-auto {
+                margin-top: auto;
+            }
+        }
+        &b {
+            &-#{$nameCol}-auto {
+                margin-bottom: auto !important;
+            }
+            &-auto {
+                margin-bottom: auto;
+            }
+        }
+        &x {
+            &-#{$nameCol}-auto {
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+            &-auto {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        &y {
+            &-#{$nameCol}-auto {
+                margin-top: auto !important;
+                margin-bottom: auto !important;
+            }
+            &-auto {
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+        }
+    }
+    .navbar-expand {
+        &-#{$nameCol} {
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+        }
+    }
+}
+@each $key, $val in $breakpoints {
+    @if ($key == 'default') {
+        // Dùng hàm map-get của scss để lấy value
+        $colDefault: map-get($breakpoints, 'default');
+        @include column($colDefault);
+    } @else {
+        @media (min-width: $val) {
+            @include column($key);
+        }
+    }
+}

@@ -1,0 +1,14 @@
+/* ==========================================================================
+   #Borders
+   ========================================================================== */
+
+$borders: top right bottom left;
+
+.border {
+    border: 1px solid #dee2e6;
+    @each $border in $borders {
+        &-#{$border} {
+            border-#{$border}: 1px solid #dee2e6;
+        }
+    }
+}
